@@ -1,6 +1,11 @@
 import React, {useState} from "react";
 
 function Form(props){
+    const[person, setPerson] = useState({
+        name: "", 
+        job: ""
+    });
+    
     function handleChange(event){
         const { name, value } = event.target;
         if (name == "job") setPerson({name: person["name"], job: value});
@@ -12,10 +17,6 @@ function Form(props){
         setPerson({name: "", job: ""});
     }
 
-    const[person, setPerson] = useState({
-        name: "", 
-        job: ""
-    });
     return(
         <form>
             <label htmlFor="name">Name</label>
